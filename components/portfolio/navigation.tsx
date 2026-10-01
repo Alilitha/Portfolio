@@ -1,0 +1,6 @@
+ 'use client';
+import Link from 'next/link';
+import {usePathname} from 'next/navigation';
+import {useState} from 'react';
+import {Menu,X,ArrowUpRight} from 'lucide-react';
+export function Navigation(){const path=usePathname().replace(/^\/Portfolio(?=\/|$)/,'')||'/';const [open,setOpen]=useState(false);return <header className="nav"><Link className="brand" href="/" onClick={()=>setOpen(false)} aria-label="Alilitha Manengela home"><span className="monogram">AM<span className="brand-dot">.</span></span><span>Alilitha Manengela<small>SOFTWARE & DATA</small></span></Link><button className="menu-toggle" aria-expanded={open} aria-controls="main-navigation" aria-label={open?'Close navigation':'Open navigation'} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav id="main-navigation" className={open?'is-open':''} aria-label="Main navigation">{[['/','Home'],['/software','Software'],['/analytics','Analytics'],['/about','About'],['/experience','Experience'],['/contact','Let’s connect']].map(([href,label])=><Link key={href} href={href} onClick={()=>setOpen(false)} aria-current={(href==='/'?path==='/':path.startsWith(href))?'page':undefined} className={href==='/contact'?'contact-link':''}>{label}{href==='/contact'&&<ArrowUpRight size={15}/>}</Link>)}</nav></header>}

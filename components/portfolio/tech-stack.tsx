@@ -1,0 +1,2 @@
+const icons:Record<string,string>={'TypeScript':'typescript','Next.js':'nextjs','React':'react','React Native':'react','Supabase':'supabase','Expo':'expo','Python (project brief)':'python','C#':'csharp','HTML':'html5','CSS':'css3','JavaScript':'javascript','PHP':'php'};
+export function TechStack({items}:{items:string[]}) {return <div className="project-meta" aria-label="Technology stack">{items.map(t=><span className="tech-chip" key={t}>{icons[t]&&<img src={'/Portfolio/logos/'+icons[t]+'.svg'} alt="" width="19" height="19" loading="lazy"/>}{t}</span>)}</div>}

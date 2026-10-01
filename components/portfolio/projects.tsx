@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Eye, Droplets, School, Car, WalletCards, ChartNoAxesCombined } from 'lucide-react';
+import {ArrowUpRight} from 'lucide-react';
 import { projects, type Project } from '@/content/projects';
-const icons = {eye:Eye,drop:Droplets,school:School,car:Car,wallet:WalletCards,chart:ChartNoAxesCombined};
-export function ProjectCard({project:p}:{project:Project}) {const Icon=icons[p.icon as keyof typeof icons];return <Link className="project-card" href={'/software/'+p.slug}><div className="project-cover" style={{background:p.color}}><h3>{p.name}</h3><Icon aria-hidden="true"/></div><div className="project-body"><p className="eyebrow">{p.category} · {p.year}</p><p>{p.summary}</p><div className="project-meta">{p.tech.map(t=><span key={t} className="badge">{t}</span>)}</div><span className="text-link">Read the project story</span></div></Link>}
+import {TechStack} from './tech-stack';
+export function ProjectLogo({project:p}:{project:Project}){return <img className="project-logo" src={'/Portfolio/logos/'+p.slug+(p.slug==='drip-alert'?'.webp':'.svg')} alt={p.name+' logo'} width="64" height="64"/>}
+export function ProjectCard({project:p}:{project:Project}) {return <Link className="project-card" href={'/software/'+p.slug}><div className="project-cover" style={{background:p.color}}><ProjectLogo project={p}/><span className="project-year">{p.year}<ArrowUpRight size={18}/></span><h3>{p.name}</h3></div><div className="project-body"><p className="eyebrow">{p.category}</p><p>{p.summary}</p><TechStack items={p.tech}/><span className="card-action">Explore project <ArrowUpRight size={18}/></span></div></Link>}
 export function ProjectGrid(){return <div className="project-grid">{projects.map(p=><ProjectCard key={p.slug} project={p}/>)}</div>}

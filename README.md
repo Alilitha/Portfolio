@@ -30,7 +30,7 @@ Serve the generated `out/` folder with a static host. The Sites manifest points 
 - `public/images`: supplied portrait optimised to WebP, plus extracted video posters.
 - `private/missing-evidence.md`: local-only questions; gitignored and outside the public build.
 
-Smart Homes remains unpublished because its purpose and features are not confirmed. No CV download is displayed because no CV file was supplied. Original iconography uses the installed Lucide library as concept identities; icons are not evidence of implemented features or registered trademarks. No generated raster imagery was needed because a suitable original portrait and real demo videos were supplied.
+Smart Homes remains unpublished because its purpose and features are not confirmed. No CV download is displayed because no CV file was supplied. Project logos use the existing BizWise mark, the Drip Alert video logo, and original SVG concept identities for the other software projects. Technology badges include locally served brand artwork; see docs/brand-assets.md. No generated raster imagery was needed because a suitable original portrait and real demo videos were supplied.
 
 ## Reproduce analytics
 Create a Python 3.12+ virtual environment and install `analytics/requirements.txt`. Run from the project root:
