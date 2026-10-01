@@ -1,3 +1,7 @@
+# GitHub Pages deployment
+
+See START-HERE.md for deployment instructions. This edition is configured for the repository named Portfolio.
+
 # Alilitha Manengela — professional portfolio
 
 A separate React/TypeScript portfolio. BizWise is a featured project; its app is not modified.
@@ -10,7 +14,7 @@ npm install
 npm run dev
 ```
 
-The portable Sites preview uses Vinext at http://127.0.0.1:5173. For a standard static deployment:
+The Next.js preview is at http://127.0.0.1:5173/Portfolio/. For a standard static deployment:
 
 ```sh
 npx next build
