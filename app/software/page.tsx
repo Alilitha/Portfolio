@@ -1,0 +1,3 @@
+import {ProjectGrid} from '@/components/portfolio/projects';
+export const metadata={title:'Software projects'};
+export default function Page(){return <main id="main"><div className="page-head"><p className="eyebrow">SOFTWARE ENGINEERING / SELECTED WORK</p><h1>Real problems.<br/><em>Practical applications.</em></h1><p className="lead">Projects shaped by healthcare, community needs, financial inclusion and small-business decisions. Explore the idea, the implementation and the evidence behind each one.</p></div><div className="content"><ProjectGrid/><p className="notice">These projects span academic work, hackathons and prototypes. Each story identifies what is confirmed and what remains a concept.</p></div></main>}

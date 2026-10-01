@@ -1,0 +1,86 @@
+[
+  {
+    "file": "retail.zip",
+    "url": "https://archive.ics.uci.edu/static/public/352/online+retail.zip",
+    "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+    "bytes": 23715478,
+    "retrieved_at": "2026-09-30T21:18:51.210501+00:00"
+  },
+  {
+    "file": "bank.zip",
+    "url": "https://archive.ics.uci.edu/static/public/222/bank+marketing.zip",
+    "sha256": "e0bf5f5de5b846e2f18e9d90606637267d46dfa260e0f17bb12e605db5efbeb4",
+    "bytes": 1023843,
+    "retrieved_at": "2026-09-30T21:18:27.322475+00:00"
+  },
+  {
+    "file": "cape-town.csv",
+    "url": "https://data.insideairbnb.com/south-africa/wc/cape-town/2026-06-29/visualisations/listings.csv",
+    "sha256": "1dbd35f25a2b6c0f8c66c3865b092a87ded4c00a041da36bcf23cc2df3371c16",
+    "bytes": 4698016,
+    "retrieved_at": "2026-09-30T21:18:28.072399+00:00"
+  },
+  {
+    "file": "green-2025-01.parquet",
+    "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-01.parquet",
+    "sha256": "84f3a121667157efcbf012c3566a6065df6f8e0312c678cb2f29cd72cc9c0f10",
+    "bytes": 1178451,
+    "retrieved_at": "2026-09-30T21:18:25.495851+00:00"
+  },
+  {
+    "file": "taxi-zones.csv",
+    "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv",
+    "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "bytes": 12331,
+    "retrieved_at": "2026-09-30T21:18:24.358005+00:00"
+  },
+  {
+    "file": "NY.GDP.MKTP.KD.ZG.json",
+    "url": "https://api.worldbank.org/v2/country/ZAF;BWA;KEN;BRA/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2010:2024&per_page=2000",
+    "sha256": "d2b741813dbf61b600054ff0499b56db6d159ced307362ac4641fd2e18dab904",
+    "bytes": 12984,
+    "retrieved_at": "2026-09-30T21:18:44.377694+00:00"
+  },
+  {
+    "file": "SL.UEM.TOTL.ZS.json",
+    "url": "https://api.worldbank.org/v2/country/ZAF;BWA;KEN;BRA/indicator/SL.UEM.TOTL.ZS?format=json&date=2010:2024&per_page=2000",
+    "sha256": "4d84da812dcc5bd547531f36bd77d575f85016128abaa909f3f7a74b12adefc4",
+    "bytes": 14929,
+    "retrieved_at": "2026-09-30T21:18:57.595896+00:00"
+  },
+  {
+    "file": "SL.UEM.1524.ZS.json",
+    "url": "https://api.worldbank.org/v2/country/ZAF;BWA;KEN;BRA/indicator/SL.UEM.1524.ZS?format=json&date=2010:2024&per_page=2000",
+    "sha256": "95d0185ac93b8de4e55e51f602008b980496ed498b44dbe384b16fb9b4dbd2ab",
+    "bytes": 15966,
+    "retrieved_at": "2026-09-30T21:18:44.845462+00:00"
+  },
+  {
+    "file": "FP.CPI.TOTL.ZG.json",
+    "url": "https://api.worldbank.org/v2/country/ZAF;BWA;KEN;BRA/indicator/FP.CPI.TOTL.ZG?format=json&date=2010:2024&per_page=2000",
+    "sha256": "6c51526bd7a6af191a615257e3117be555d9bcd86a0cec197e86424b6f815e55",
+    "bytes": 13751,
+    "retrieved_at": "2026-09-30T21:18:44.354502+00:00"
+  },
+  {
+    "file": "IT.NET.USER.ZS.json",
+    "url": "https://api.worldbank.org/v2/country/ZAF;BWA;KEN;BRA/indicator/IT.NET.USER.ZS?format=json&date=2010:2024&per_page=2000",
+    "sha256": "30bb5db474b4371eeebf86e9bf18ea011225014bcf1369cd9583732f8ae0c24d",
+    "bytes": 13989,
+    "retrieved_at": "2026-09-30T21:18:44.949596+00:00"
+  },
+  {
+    "file": "SP.POP.TOTL.json",
+    "url": "https://api.worldbank.org/v2/country/ZAF;BWA;KEN;BRA/indicator/SP.POP.TOTL?format=json&date=2010:2024&per_page=2000",
+    "sha256": "a8e917575075d06613064aa48171a42635d90e9f74e69f7dfb8ce516d6030dfc",
+    "bytes": 11898,
+    "retrieved_at": "2026-09-30T21:18:45.054201+00:00"
+  },
+  {
+    "file": "cape-town-wards.geojson",
+    "url": "https://data.insideairbnb.com/south-africa/wc/cape-town/2026-06-29/visualisations/neighbourhoods.geojson",
+    "sha256": "c7b6afcc96dc324b5c6c99d2c1c0b8c904a5157a4f2c91c59558f44064eb499a",
+    "bytes": 1653032,
+    "retrieved_at": "2026-10-01T06:01:46.001027+00:00"
+  }
+]
