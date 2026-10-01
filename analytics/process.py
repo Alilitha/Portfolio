@@ -7,7 +7,8 @@ import pandas as pd
 import numpy as np
 import duckdb
 RAW=ROOT/'analytics/raw';OUT=ROOT/'public/data';CLEAN=ROOT/'analytics/cleaned'
-CLEAN.mkdir(exist_ok=True); OUT.mkdir(exist_ok=True)
+CLEAN.mkdir(parents=True,exist_ok=True); OUT.mkdir(parents=True,exist_ok=True)
+(ROOT/'public/downloads').mkdir(parents=True,exist_ok=True)
 SOURCES=json.loads((ROOT/'analytics/sources.json').read_text())
 con=duckdb.connect()
 def records(df):return json.loads(df.to_json(orient='records',double_precision=6))

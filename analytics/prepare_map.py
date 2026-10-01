@@ -5,6 +5,7 @@ from datetime import datetime,timezone
 root=Path(__file__).resolve().parent.parent;raw=root/'analytics/raw/cape-town-wards.geojson'
 url='https://data.insideairbnb.com/south-africa/wc/cape-town/2026-06-29/visualisations/neighbourhoods.geojson'
 if not raw.exists():raw.parent.mkdir(parents=True,exist_ok=True);raw.write_bytes(urllib.request.urlopen(url,timeout=90).read())
+(root/'public/data').mkdir(parents=True,exist_ok=True)
 d=json.loads(raw.read_text())
 def simplify(points,tol=.0003):
  if len(points)<=2:return points

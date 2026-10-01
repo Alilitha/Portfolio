@@ -14,3 +14,5 @@
 - Software roles reflect the owner's clarification: developer, while teammates handled project management.
 
 The local preview is not a claim of public availability. Deployment status is reported separately after hosting confirms success.
+
+The analysis download was extracted into a fresh directory and all five analyses plus 37 metric scenarios were reproduced from the cached, hashed raw inputs. Output folders are created automatically.
