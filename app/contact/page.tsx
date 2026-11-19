@@ -1,2 +1,24 @@
-export const metadata={title:'Contact'};
-export default function Page(){return <main id="main"><div className="page-head"><p className="eyebrow">CONTACT / LET’S CONNECT</p><h1>Have a problem<br/><em>worth working on?</em></h1><p className="lead">I’m interested in graduate software engineering, junior development, data analytics and business systems opportunities.</p></div><section className="content"><div className="contact-panel"><h2>Start a conversation.</h2><p>For opportunities, project questions or collaboration, email is the best way to reach me.</p><a className="email-address" href="mailto:alilithamanengela@gmail.com">alilithamanengela@gmail.com</a><p>Parklands, Cape Town · South Africa</p><a className="button secondary" href="https://github.com/Alilitha">Explore my GitHub</a></div></section></main>}
+import { DocumentRequests } from '@/components/portfolio/document-requests';
+
+export const metadata = { title: 'Contact' };
+
+export default function Page() {
+  return (
+    <main id="main">
+      <div className="page-head">
+        <p className="eyebrow">Contact</p>
+        <h1>Contact Alilitha</h1>
+        <p className="lead">Get in touch about software development, business systems, AI projects or opportunities to collaborate.</p>
+      </div>
+      <section className="content" aria-labelledby="email-title">
+        <div className="contact-panel">
+          <h2 id="email-title">Send me an email</h2>
+          <p>Share a little about your project or opportunity and what you have in mind.</p>
+          <a className="email-address" href="mailto:alilithamanengela@gmail.com">alilithamanengela@gmail.com</a>
+          <p>East London, South Africa</p>
+        </div>
+        <DocumentRequests />
+      </section>
+    </main>
+  );
+}

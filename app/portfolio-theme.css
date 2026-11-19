@@ -1,0 +1,261 @@
+:root {
+  --portfolio-dark: #0b1b20;
+  --portfolio-panel: #10272c;
+  --portfolio-text: #f8f4eb;
+  --portfolio-muted: #d3ded9;
+  --portfolio-accent: #bfebe0;
+  --portfolio-warm: #e4b987;
+  --portfolio-edge: #bfdcd13d;
+}
+
+body { padding-top: 76px; }
+body::before {
+  background:
+    linear-gradient(110deg, #0b1b20f5, #0b1b20bd 58%, #302b21d1),
+    url('/Portfolio/images/alilitha-profile-studio.webp') 64% 25% / cover no-repeat;
+}
+
+.nav {
+  height: 76px;
+  background: #0b1b20f7;
+  border-bottom-color: var(--portfolio-edge);
+  color: var(--portfolio-text);
+}
+.nav .brand small { color: var(--portfolio-muted); }
+.nav nav { font-size: .875rem; }
+.nav a:hover,
+.nav nav a[aria-current=page]:not(.contact-link) { color: var(--portfolio-accent); }
+.nav nav a[aria-current=page]:not(.contact-link)::after { background: var(--portfolio-accent); }
+.nav .contact-link, .nav .contact-link:hover {
+  border-radius: 100px;
+  background: var(--portfolio-accent);
+  color: var(--portfolio-dark);
+}
+.nav .contact-link:hover { background: #e2fbf5; }
+.nav .menu-toggle {
+  color: var(--portfolio-text);
+  border-color: var(--portfolio-edge);
+  background: var(--portfolio-panel);
+}
+
+.consulting-hero {
+  width: min(94%, 1440px);
+  min-height: clamp(560px, 76svh, 790px);
+  margin: clamp(12px, 2vw, 26px) auto clamp(32px, 6vw, 78px);
+  padding: clamp(30px, 6vw, 92px);
+  border: 1px solid var(--portfolio-edge);
+  border-radius: clamp(18px, 2.5vw, 34px);
+  background: var(--portfolio-dark);
+}
+.consulting-hero::before {
+  background: linear-gradient(90deg, #0b1b20 0%, #0b1b20fa 24%, #0b1b20ae 43%, transparent 69%);
+}
+.consulting-portrait {
+  inset: 0 0 0 auto;
+  width: 86%;
+  object-position: 60% 23%;
+}
+.consulting-hero-copy { max-width: min(49%, 560px); }
+.consulting-hero .eyebrow { color: var(--portfolio-warm); letter-spacing: .09em; }
+.consulting-hero h1 {
+  color: var(--portfolio-text);
+  font-size: clamp(3.25rem, 7.25vw, 7.5rem);
+  line-height: .94;
+  letter-spacing: -.073em;
+  margin: 0 0 24px;
+}
+.consulting-hero h1 span { display: block; color: var(--portfolio-accent); }
+.consulting-hero .intro { font-size: clamp(1rem, 1.5vw, 1.18rem); line-height: 1.65; }
+.consulting-hero .button.secondary {
+  border-color: #d4e2db99;
+  background: #0b1b2080;
+}
+
+.consulting-home :is(.profile-education, .consulting-services, .consulting-contact) {
+  width: min(90%, 1240px);
+  border-color: var(--portfolio-edge);
+  background: #10272cbd;
+}
+.consulting-home h2 { color: var(--portfolio-text); letter-spacing: -.05em; }
+.consulting-home .profile-education .eyebrow { color: var(--portfolio-warm); }
+.consulting-home .consulting-services-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.consulting-home .consulting-services-grid article {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0 16px;
+  padding: clamp(18px, 3vw, 27px);
+  background: #132b30bb;
+  border-color: var(--portfolio-edge);
+}
+.consulting-services-grid .service-icon {
+  grid-row: span 2;
+  margin: 0;
+  color: var(--portfolio-accent);
+  background: #bfebe01a;
+}
+.consulting-services-grid article:nth-child(n) .service-icon { background: #bfebe01a; color: var(--portfolio-accent); }
+.consulting-services-grid article p { grid-column: 2; color: var(--portfolio-muted); }
+
+main:not(.consulting-home) {
+  overflow: clip;
+  border-color: var(--portfolio-edge);
+  background: #f5f0e8;
+}
+main:not(.consulting-home) > .page-head {
+  max-width: none;
+  padding-block: clamp(32px, 6vw, 68px);
+  color: var(--portfolio-text);
+  background: linear-gradient(95deg, #0c2025f7, #1a3439db),
+    url('/Portfolio/images/alilitha-profile-studio.webp') 70% 36% / cover;
+}
+main:not(.consulting-home) > .page-head:has(+ .content) { margin-bottom: clamp(26px, 4vw, 48px); }
+main:not(.consulting-home) > .page-head :is(.eyebrow, h1 em, .breadcrumbs a) { color: var(--portfolio-accent); }
+main:not(.consulting-home) > .page-head :is(.lead, .breadcrumbs) { color: var(--portfolio-muted); }
+main:not(.consulting-home) > .project-detail-head {
+  width: auto;
+  margin: 0 0 clamp(26px, 4vw, 48px);
+  border-radius: 0;
+}
+.project-detail-head .badge { margin-top: 14px; }
+.project-card { border-color: #d6d0c4; }
+.project-card:hover { border-color: #598980; }
+.project-cover { min-height: 195px; }
+.project-cover h3 { font-size: clamp(1.55rem, 3vw, 2.2rem); }
+footer { border-color: var(--portfolio-edge); background: #0b1b20bf; }
+
+@media (max-width: 800px) {
+  .nav nav { background: var(--portfolio-dark); border-color: var(--portfolio-edge); }
+  .nav nav a[aria-current=page]:not(.contact-link) { background: #bfebe016; }
+  .consulting-hero {
+    min-height: 0;
+    padding: clamp(235px, 58vw, 420px) 7% 36px;
+  }
+  .consulting-hero::before {
+    background: linear-gradient(0deg, #0b1b20 8%, #0b1b20f5 38%, #0b1b2070 65%, transparent 85%);
+  }
+  .consulting-portrait { width: 100%; object-position: 60% 19%; }
+  .consulting-hero-copy { max-width: 510px; }
+  .consulting-hero h1 { font-size: clamp(3rem, 10vw, 5.3rem); }
+}
+
+@media (max-width: 590px) {
+  .consulting-home .consulting-services-grid { grid-template-columns: 1fr; }
+}
+
+.journey {
+  --journey-line: #edb48642;
+  --journey-warm: #f0b27f;
+  width: min(92%, 1230px);
+  margin: 0 auto 48px;
+  display: grid;
+  gap: clamp(18px, 3vw, 34px);
+  color: var(--portfolio-text);
+}
+.journey-panel {
+  min-width: 0;
+  padding: clamp(24px, 5vw, 62px);
+  border: 1px solid var(--journey-line);
+  border-radius: 24px;
+  background: linear-gradient(125deg, #1e211fef, #101f25db);
+  scroll-margin-top: 90px;
+}
+.journey p, .journey li { color: #e0ded5; }
+.journey .eyebrow { color: var(--journey-warm); }
+.journey h2 { max-width: 21ch; margin-bottom: 24px; }
+.journey h3 { margin: 0 0 12px; }
+.journey-roots, .journey-split, .journey-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 62px);
+}
+.journey-roots { background: linear-gradient(125deg, #36271eea, #142428cc); }
+.journey-roots p + p, .journey-inset p + p, .journey-story p + p { margin-top: 16px; }
+.journey-inset { border-left: 2px solid var(--journey-line); padding-left: 20px; }
+.journey-inset + .journey-inset { margin-top: 26px; }
+.journey-milestones { display: grid; gap: 15px; list-style: none; padding: 0; }
+.journey-milestones strong { display: block; color: var(--journey-warm); }
+.journey-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
+  align-items: center;
+  gap: clamp(22px, 5vw, 58px);
+  padding-top: 26px;
+}
+.journey-story + .journey-story { margin-top: 34px; border-top: 1px solid var(--journey-line); }
+.journey-story:nth-of-type(even) .journey-photo { order: -1; }
+.journey-photo { margin: 0; }
+.journey-photo img { width: 100%; height: auto; max-height: 400px; object-fit: contain; background: #0c181b; border-radius: 14px; }
+.journey-photo figcaption { padding-top: 9px; color: #e5d7ca; font-size: .875rem; }
+.journey-links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 18px; }
+.journey-links a { color: var(--journey-warm); text-decoration: underline; text-underline-offset: 4px; }
+.journey-projects { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.journey-projects .project-card { color: var(--ink); }
+.journey-projects .project-body p:not(.eyebrow) { color: #435764; }
+.journey-brand img { width: 112px; height: 112px; padding: 12px; background: #e9eee1; border-radius: 22px; margin-bottom: 22px; }
+.journey-credentials { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; list-style: none; padding: 0; }
+.journey-credentials a { display: grid; height: 100%; gap: 8px; padding: 19px; border: 1px solid var(--journey-line); border-radius: 14px; background: #ffffff06; }
+.journey-credentials a:hover { background: #ffffff12; }
+.journey-credentials span { font-weight: 700; }
+.journey-credentials small { font-size: .86rem; }
+.journey-credentials strong { color: var(--journey-warm); font-size: .875rem; margin-top: auto; }
+.journey-contact { align-items: center; background: linear-gradient(120deg, #35271f, #13292d); }
+.journey-contact .actions { margin: 0; }
+.journey-contact .button:not(.secondary), .consulting-home .consulting-hero .button:not(.secondary) { background: #f3b783; color: #211912; border-color: #f3b783; }
+.journey-contact .button:not(.secondary):hover, .consulting-home .consulting-hero .button:not(.secondary):hover { background: #ffd2aa; }
+.consulting-home .consulting-hero h1 span { color: #f0b27f; }
+.journey-focus { display: flex; flex-wrap: wrap; gap: 5px 14px; margin: 22px 0 0; padding: 0; color: #f2dfce; list-style: none; font-size: .875rem; }
+.journey-focus li { padding-bottom: 3px; border-bottom: 1px solid #edb48666; }
+@media (max-width: 950px) {
+  .journey-projects, .journey-credentials { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .journey-roots, .journey-split, .journey-contact, .journey-story { grid-template-columns: 1fr; }
+  .journey-story:nth-of-type(even) .journey-photo { order: 0; }
+}
+@media (max-width: 530px) {
+  .journey-projects, .journey-credentials { grid-template-columns: 1fr; }
+}
+
+.journey-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 16px 22px;
+  border-block: 1px solid var(--journey-line);
+  background: #101f25e0;
+}
+.journey-index a { color: #f1e6dc; }
+.journey-index a:hover { color: var(--journey-warm); text-decoration: underline; }
+.project-preview {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #142e3f;
+}
+
+.document-requests { margin-top: 28px; }
+.document-requests form { display: grid; gap: 14px; max-width: 580px; margin-top: 24px; }
+.document-requests label { display: grid; gap: 6px; font-weight: 650; }
+.document-requests :is(input, select) { width: 100%; min-height: 46px; padding: 10px 13px; border: 1px solid #718b81; border-radius: 8px; background: white; color: var(--ink); }
+.document-requests p { margin: 0; }
+.document-requests .actions { margin: 8px 0 0; }
+.document-requests [role=status]:empty { display: none; }
+.business-panel { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 22px; }
+.business-panel img { border-radius: 14px; background: #f5f1e7; }
+@media (max-width: 590px) { .business-panel { grid-template-columns: 1fr; } }
+
+.journey-brand img { width: min(100%, 310px); height: auto; padding: 0; }
+.business-panel img { width: min(100%, 225px); height: auto; }
+
+.project-cover .project-logo, .project-title .project-logo {
+  width: clamp(85px, 12vw, 124px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #fff;
+  padding: 5px;
+}

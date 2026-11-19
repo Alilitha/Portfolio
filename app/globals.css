@@ -10,3 +10,355 @@
 @media(max-width:800px){body{padding-top:76px}.nav{height:76px;padding:12px 5%;flex-wrap:nowrap}.menu-toggle{display:flex;align-items:center;justify-content:center;background:#edf3ff;border:1px solid #dce5f5;border-radius:9px;width:42px;height:42px;color:var(--ink);cursor:pointer}.nav nav{display:none;position:absolute;top:76px;left:0;right:0;background:white;padding:18px 5% 24px;border-bottom:1px solid var(--line);box-shadow:0 18px 25px #17284012}.nav nav.is-open{display:flex;flex-direction:column;align-items:stretch;gap:8px}.nav nav a{padding:10px}.nav nav a[aria-current=page]:not(.contact-link):after{left:0;right:auto;top:10px;bottom:10px;height:auto;width:3px}.nav nav a[aria-current=page]{background:#f1f5ff;border-radius:6px}.nav .contact-link{justify-content:center}.hero{grid-template-columns:1fr;padding:40px 6% 50px;gap:35px}.hero h1{font-size:clamp(43px,8vw,65px);letter-spacing:-2px}.hero .intro{max-width:600px}.portrait{max-width:340px}.hero-note{font-size:10px}.strip{gap:16px;flex-wrap:wrap}.callout{margin:20px 5% 30px;padding:35px;border-radius:18px}.project-title{gap:15px}.project-title .project-logo{width:60px;height:60px}.project-title h1{font-size:38px}.project-body>p:not(.eyebrow){min-height:0}.story-nav{padding:15px}.brand>span:last-child{font-size:13px}.video-grid{grid-template-columns:1fr}html{scroll-padding-top:100px}}
 @media(max-width:400px){.hero .eyebrow{font-size:8px;letter-spacing:.8px}.hero h1{font-size:43px}.portrait{max-width:285px}.project-title h1{font-size:32px}.project-cover h3{font-size:27px}.callout{padding:26px}.metrics>div{padding:12px}.hero .actions .button{width:100%}}
 @media(prefers-reduced-motion:reduce){.button:hover,.project-card:hover{transform:none}}
+
+/* Shared portfolio palette */
+:root {
+  --background: #fafaf6;
+  --foreground: #142e3f;
+  --ink: #142e3f;
+  --blue: #17655d;
+  --line: #d7e2e3;
+  --primary: #17655d;
+  --ring: #17655d;
+  --secondary: #e8f2ef;
+  --border: #d7e2e3;
+  --navy: #102c40;
+  --teal: #285955;
+  --mist: #e7eff4;
+  --sage: #e7efeb;
+}
+
+.nav { background: #fafaf6f7; }
+.brand .monogram, .menu-toggle { background: var(--mist); border-color: var(--line); }
+.nav .contact-link { background: var(--navy); }
+.button:hover { background: var(--navy); }
+.button.secondary:hover { background: var(--mist); color: var(--navy); }
+.intro, .page-head .lead, .prose p, .contact-panel p { color: #435764; }
+.contact-panel, .notice, .story-nav a { background: var(--sage); }
+.about-photo { object-position: 64% center; }
+
+.consulting-hero {
+  position: relative;
+  width: min(94%, 1340px);
+  margin: 22px auto 0;
+  padding: clamp(38px, 5vw, 74px) clamp(16px, 4vw, 60px) 0;
+  overflow: hidden;
+  border: 1px solid #dbe5e5;
+  border-radius: 26px;
+  background: #fff;
+  text-align: center;
+}
+
+.consulting-hero-copy { max-width: 815px; margin: 0 auto; }
+.consulting-hero .intro { max-width: 540px; margin: 0 auto; }
+.consulting-hero .actions { justify-content: center; margin-bottom: 34px; }
+.consulting-hero .button { border-radius: 100px; }
+.consulting-hero .button:not(.secondary) { background: var(--navy); border-color: var(--navy); }
+.consulting-hero .button:not(.secondary):hover { background: var(--teal); }
+
+.consulting-portrait {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 26%;
+}
+
+@keyframes dim-consulting-portrait {
+  to { opacity: .55; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .consulting-portrait {
+      animation: dim-consulting-portrait linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 90px 740px;
+    }
+  }
+}
+
+.consulting-home .eyebrow {
+  font-size: .875rem;
+  letter-spacing: .12em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.consulting-hero h1 {
+  font-size: clamp(2.6rem, 5.6vw, 5.15rem);
+  font-weight: 650;
+  line-height: 1.02;
+  letter-spacing: -.065em;
+  margin: 0 0 22px;
+}
+
+
+
+.consulting-home h2 { font-weight: 650; }
+.consulting-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.consulting-services-grid article {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  padding: 24px;
+  background: #fff;
+}
+
+.consulting-services-grid article:nth-child(2) { background: #edf5f8; }
+.consulting-services-grid article:nth-child(3) { background: #edf5f1; }
+.consulting-services-grid article:nth-child(4) { background: #f6f2e9; }
+.service-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  background: var(--mist);
+  color: var(--navy);
+}
+
+.consulting-services-grid article:nth-child(2) .service-icon { background: #dceaf1; }
+.consulting-services-grid article:nth-child(3) .service-icon { background: #d7e9e1; color: var(--teal); }
+.consulting-services-grid article:nth-child(4) .service-icon { background: #f3e1cc; color: #70441e; }
+.consulting-services-grid h3 { font-size: 1.2rem; margin: 0 0 8px; }
+.consulting-services-grid p { color: #435764; margin: 0; }
+
+.consulting-approach {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(20px, 5vw, 75px);
+  width: min(90%, 1188px);
+  background: var(--sage);
+  border-radius: 20px;
+  padding: clamp(26px, 5vw, 60px);
+}
+
+.consulting-approach h2 { margin-bottom: 0; }
+.consulting-approach .eyebrow, .consulting-approach .text-link { color: var(--teal); }
+.consulting-approach p:not(.eyebrow) { margin: 0 0 16px; color: #344c46; }
+.consulting-contact {
+  width: min(90%, 1188px);
+  margin-inline: auto;
+  background: linear-gradient(115deg, #102c40, #164852 65%, #215b52);
+}
+.consulting-contact p:not(.eyebrow) { color: #e0eff0; }
+.consulting-contact .button { background: #eef8f5; border-color: #eef8f5; color: var(--navy); }
+.consulting-contact .button:hover { background: var(--mist); }
+
+@media (max-width: 1050px) {
+  .consulting-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 800px) {
+  .consulting-approach { grid-template-columns: 1fr; }
+  .consulting-hero { margin-top: 12px; border-radius: 18px; }
+  .nav nav a[aria-current=page] { background: var(--mist); }
+}
+@media (max-width: 480px) {
+  .consulting-services-grid { grid-template-columns: 1fr; }
+}
+
+h1 em, h2 em {
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: normal;
+}
+
+.brand-avatar {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 61% 23%;
+  border: 1px solid var(--line);
+}
+.brand small { font-size: 12px; letter-spacing: 0; color: #435764; }
+
+.consulting-hero {
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  min-height: clamp(520px, 72svh, 750px);
+  padding: clamp(28px, 7vw, 100px);
+  text-align: left;
+  background: #152b30;
+  color: white;
+}
+.consulting-hero::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, #10282c 0%, #10282cf5 29%, #10282c93 46%, transparent 72%);
+}
+.consulting-hero-copy { max-width: min(48%, 525px); margin: 0; }
+.consulting-hero .eyebrow { color: #c3ede3; }
+.consulting-hero .intro { color: #f1f7f5; margin: 0; }
+.consulting-hero .actions { justify-content: flex-start; margin-bottom: 0; }
+.consulting-hero .button:not(.secondary) { background: #c3ede3; border-color: #c3ede3; color: #10282c; }
+.consulting-hero .button:not(.secondary):hover { background: #e0faf4; }
+.consulting-hero .button.secondary { background: #142e3fe6; border-color: #aec4cf; color: white; }
+.consulting-hero .button.secondary:hover { background: #24495b; }
+.consulting-portrait { z-index: -2; object-position: center 24%; }
+
+.project-cover, .project-detail-head { position: relative; isolation: isolate; overflow: hidden; }
+.project-cover { background: var(--project-tint); background-image: none !important; }
+.project-detail-head {
+  margin: 28px auto;
+  width: min(92%, 1240px);
+  padding: clamp(24px, 5vw, 64px);
+  border-radius: 22px;
+  background: linear-gradient(90deg, #fff, var(--project-tint));
+}
+.project-cover::before, .project-detail-head::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--project-art) no-repeat right 5% center / clamp(170px, 29vw, 360px);
+  opacity: .08;
+  pointer-events: none;
+}
+.project-detail-head > p:not(.eyebrow) { max-width: 660px; }
+.project-logo { display: block; border-radius: 16px; }
+.project-cover .project-logo { width: 72px; height: 72px; }
+
+@media (max-width: 800px) {
+  .consulting-hero { min-height: 0; padding: clamp(220px, 56vw, 370px) 6% 30px; }
+  .consulting-hero::before {
+    background: linear-gradient(0deg, #10282c 11%, #10282cf8 38%, #10282c70 62%, transparent 79%);
+  }
+  .consulting-hero-copy { max-width: 560px; }
+  .consulting-portrait { object-position: 60% 15%; }
+  .project-detail-head::before { opacity: .055; }
+}
+
+/* Site palette drawn from the portrait's stone wall, navy jacket and ivory shirt. */
+:root {
+  --background: #e9e3d9;
+  --ink: #182d38;
+  --foreground: #182d38;
+  --line: #d3cabe;
+  --border: #d3cabe;
+  --sage: #e6ebe3;
+}
+body { background: linear-gradient(160deg, #d7dfda, #e9e3d9 440px, #f6f1e8 1000px); }
+.nav { background: #f4efe7f7; }
+.consulting-home { background: linear-gradient(180deg, transparent, #c9c2b450 55%, #8c958c38); }
+.consulting-hero { margin-bottom: clamp(36px, 6vw, 78px); }
+.consulting-hero::before {
+  background: linear-gradient(90deg, #10282c, #10282cf5 26%, #10282c80 43%, transparent 62%);
+}
+.profile-education {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(20px, 4vw, 58px);
+  margin: 0 auto;
+  width: min(90%, 1188px);
+  padding: clamp(28px, 5vw, 62px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #f9f6ef;
+}
+.profile-education h2 { margin: 0; }
+.profile-education h3 { font-size: 1.25rem; margin: 0 0 5px; }
+.profile-education p { margin: 0; color: #435764; }
+.profile-education p + h3 { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+.consulting-services-grid article { border-color: #d8d0c3; background: #f9f6ef; }
+.consulting-services-grid article:nth-child(2) { background: #e0e8e4; }
+.consulting-services-grid article:nth-child(3) { background: #e7e4da; }
+.consulting-services-grid article:nth-child(4) { background: #f0e7d9; }
+.consulting-contact { background: linear-gradient(118deg, #142a35, #244247 70%, #43504a); }
+footer { background: #eee8de; }
+@media (max-width: 800px) {
+  .profile-education { grid-template-columns: 1fr; }
+  .consulting-hero::before {
+    background: linear-gradient(0deg, #10282c 12%, #10282cf8 39%, #10282c64 63%, transparent 79%);
+  }
+}
+
+/* A single portrait stays behind every route and remains muted outside the hero. */
+body {
+  isolation: isolate;
+  background: #10282c;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, #10282cf2, #142a35ad 58%, #3b372ce0),
+    url('/Portfolio/images/alilitha-profile-studio.webp') 63% 27% / cover no-repeat;
+}
+
+.consulting-home { background: transparent; }
+
+.profile-education,
+.consulting-services,
+.consulting-contact {
+  width: min(90%, 1188px);
+  margin-inline: auto;
+  border: 1px solid #c3ede338;
+  border-radius: 24px;
+  background: #10282cb8;
+  color: #fff;
+}
+
+.profile-education .eyebrow { color: #c3ede3; }
+.profile-education p { color: #eef5f2; }
+.profile-education p + h3 { border-color: #c3ede34a; }
+
+.consulting-services {
+  margin-block: clamp(24px, 5vw, 60px);
+  padding: clamp(24px, 5vw, 60px);
+}
+
+.consulting-services-grid article:nth-child(n) {
+  border-color: #c3ede34a;
+  background: #142e3fa6;
+}
+
+.consulting-services-grid p,
+.consulting-contact p:not(.eyebrow) { color: #eef5f2; }
+
+.consulting-contact .button {
+  background: #c3ede3;
+  border-color: #c3ede3;
+  color: #10282c;
+}
+
+main:not(.consulting-home) {
+  display: flow-root;
+  width: min(94%, 1340px);
+  margin: clamp(14px, 3vw, 36px) auto;
+  border: 1px solid #e9e3d999;
+  border-radius: 24px;
+  background: #f6f1e8dc;
+}
+
+.project-detail-head {
+  background: linear-gradient(90deg, #f9f6efed, var(--project-tint));
+}
+
+footer {
+  width: min(94%, 1340px);
+  margin: 0 auto 24px;
+  border: 1px solid #c3ede338;
+  border-radius: 18px;
+  background: #10282cb8;
+  color: #fff;
+}
+
+footer p span, footer div span { color: #e0ebe8; }

@@ -1,5 +1,26 @@
-import Link from 'next/link';
-import {ProjectCard} from '@/components/portfolio/projects';
-import {projects} from '@/content/projects';
-export default function Home() { return <main id="main"><section className="hero"><div className="hero-copy"><p className="eyebrow">SOFTWARE DEVELOPER · ASPIRING DATA ANALYST</p><h1>Practical software.<br/><em>Meaningful</em><br/>decisions.</h1><p className="intro">I’m Alilitha, an Information Systems graduate in Cape Town. I turn business and community needs into applications, and explore data to understand what comes next.</p><div className="actions"><Link className="button" href="/software">Explore my software</Link><Link className="button secondary" href="/analytics">Explore data projects</Link></div><div className="hero-note"><span>01 / BUILD</span><span>02 / ANALYSE</span><span>03 / KEEP LEARNING</span></div></div><figure className="portrait"><img src="/Portfolio/images/alilitha-ai-for-good.webp" alt="Alilitha seated at an AI for Good event" width="900" height="1200"/><figcaption><span className="profile-kicker">BASED IN CAPE TOWN</span><strong>Alilitha Manengela</strong><span>Developer. Problem solver. Always learning.</span></figcaption></figure></section><section className="strip"><p>Information Systems graduate</p><p>Software Engineer Trainee</p><p>Developer & mentor</p></section><section className="section"><p className="eyebrow">TWO PERSPECTIVES. ONE PRACTICE.</p><h2>Build the system.<br/>Understand the story.</h2><div className="pathways"><Link href="/software"><span className="number">01</span><h3>Software engineering</h3><p>Healthcare, community infrastructure, fintech and AI. Explore the problems behind the projects and the thinking behind the applications.</p><span className="text-link">View software projects</span></Link><Link href="/analytics"><span className="number">02</span><h3>Data analytics</h3><p>From raw public data to a question worth answering. Explore interactive analysis, documented decisions and reproducible findings.</p><span className="text-link">View analytics projects</span></Link></div></section><section className="section featured"><p className="eyebrow">SELECTED PROJECTS</p><h2>Ideas, made tangible.</h2><div className="project-grid">{projects.slice(0,2).map(p=><ProjectCard key={p.slug} project={p}/>)}</div></section><section className="callout"><p className="eyebrow">A CAREER BUILT THROUGH PRACTICE</p><h2>Curiosity, grounded<br/>in real work.</h2><p>From university projects and hackathons to maintaining existing systems at MyBliss Technologies, every experience adds a new perspective.</p><Link className="button" href="/experience">Explore my experience</Link></section></main> }
+import Image from 'next/image';
+import { Journey } from '@/components/portfolio/journey';
 
+export default function Home() {
+  return (
+    <main id="main" className="consulting-home">
+      <section className="consulting-hero" aria-labelledby="home-title">
+        <div className="consulting-hero-copy">
+          <p className="eyebrow">Digital Solutions Builder · East London</p>
+          <h1 id="home-title">Alilitha <span>Manengela</span></h1>
+          <p className="intro">I want to help small businesses use technology with confidence. My path to that work has taken me through software development, business analysis and mentoring.</p>
+          <div className="actions">
+            <a className="button" href="#journey">Explore my journey</a>
+            <a className="button secondary" href="#work">View my work</a>
+          </div>
+          <ul className="journey-focus" aria-label="Areas of interest">
+            <li>Business analysis</li><li>Digital solutions</li><li>AI and digital skills</li><li>Quality and process improvement</li>
+          </ul>
+        </div>
+        <Image className="consulting-portrait" src="/Portfolio/images/alilitha-profile-studio.webp"
+          alt="Alilitha Manengela seated at a desk in a navy suit" width={1536} height={1024} preload />
+      </section>
+      <Journey />
+    </main>
+  );
+}
